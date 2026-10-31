@@ -1,0 +1,625 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <title>Shubh Jewellers | Handcrafted Gold, Silver and Diamond Jewellery</title>
+  <meta name="description" content="Shubh Jewellers offers hallmark-certified gold, silver and diamond jewellery. Open daily, 12:00 PM to 8:30 PM.">
+  <meta name="theme-color" content="#FFF8F6">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400&family=Jost:wght@300;400;500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <canvas id="bg3d" aria-hidden="true"></canvas>
+
+  <header class="site-header" id="top">
+    <a class="brand" href="#top" aria-label="Shubh Jewellers, home">
+      <img src="logo.png" alt="" class="brand-logo" onload="this.parentNode.classList.add('has-logo')" onerror="this.remove()">
+      <span class="brand-name">Shubh Jewellers</span>
+    </a>
+    <button class="nav-toggle" aria-expanded="false" aria-controls="site-nav" aria-label="Open menu">
+      <span></span><span></span>
+    </button>
+    <nav id="site-nav" class="site-nav" aria-label="Main">
+      <a href="#top">Home</a>
+      <a href="#collections">Collections</a>
+      <a href="#about">About Us</a>
+      <a href="#contact">Contact</a>
+    </nav>
+  </header>
+
+  <main>
+    <section class="hero">
+      <div class="hero-text">
+        <h1>Timeless Elegance, Crafted with Purity</h1>
+        <p>Discover exquisite handcrafted gold, silver, and diamond jewelry tailored for your special moments.</p>
+        <a class="btn" href="#collections">Explore Collection</a>
+      </div>
+      <div class="hero-visual">
+        <div class="arch frame" data-mark="S">
+          <img src="hero.jpg" alt="Handcrafted gold jewellery from Shubh Jewellers" onerror="this.remove()">
+        </div>
+      </div>
+    </section>
+
+    <section class="trust" aria-label="Why Shubh Jewellers">
+      <div><strong>100% Hallmark-Certified</strong><span>Purity you can trust</span></div>
+      <div><strong>Handcrafted Designs</strong><span>Traditional artistry, modern style</span></div>
+      <div><strong>Open Daily</strong><span>12:00 PM – 8:30 PM, Sarafa Bazaar</span></div>
+    </section>
+
+    <section class="about" id="about">
+      <div class="about-inner">
+        <h2>Welcome to Shubh Jewellers</h2>
+        <span class="rule" aria-hidden="true"></span>
+        <p>At Shubh Jewellers, we blend traditional artistry with contemporary designs. Every piece in our collection is 100% hallmark-certified, crafted to reflect elegance, trust, and timeless beauty.</p>
+      </div>
+    </section>
+
+    <section class="collection" id="collections">
+      <div class="section-head">
+        <h2>Featured Collection</h2>
+        <p>A curated selection from our showcase.</p>
+      </div>
+      <div class="grid" id="product-grid"></div>
+    </section>
+
+    <section class="banner">
+      <div class="banner-img frame" data-mark="S">
+        <img src="banner.jpg" alt="" onerror="this.remove()">
+      </div>
+      <div class="banner-text">
+        <h2>Jewellery for every celebration</h2>
+        <p>Visit us in store to see each piece in person, or message us on WhatsApp to ask about a design.</p>
+        <a class="btn btn-light" href="https://wa.me/919754512815" target="_blank" rel="noopener">Message on WhatsApp</a>
+      </div>
+    </section>
+
+    <section class="contact" id="contact">
+      <div class="section-head">
+        <h2>Visit Shubh Jewellers</h2>
+      </div>
+      <div class="info-grid">
+        <div class="info-card">
+          <h3>Opening Hours</h3>
+          <p class="big">12:00 PM – 8:30 PM</p>
+          <p>Open daily</p>
+          <p id="open-status" class="status" aria-live="polite"></p>
+        </div>
+        <div class="info-card">
+          <h3>Our Store</h3>
+          <p class="big">Naval Mansion Market</p>
+          <p>Sarafa Bazaar, Gwalior, Madhya Pradesh</p>
+          <p><a class="link" href="https://www.google.com/maps/search/?api=1&amp;query=Shubh+Jewellers+Naval+Mansion+Market+Sarafa+Bazaar+Gwalior+Madhya+Pradesh" target="_blank" rel="noopener">Get Directions</a></p>
+        </div>
+        <div class="info-card">
+          <h3>Phone and WhatsApp</h3>
+          <p class="big"><a href="tel:+919754512815">+91 9754512815</a></p>
+          <p><a class="link" href="https://wa.me/919754512815" target="_blank" rel="noopener">Chat on WhatsApp</a></p>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <p class="brand-name">Shubh Jewellers</p>
+    <p>Hallmark-certified gold, silver and diamond jewellery.</p>
+    <p class="copy">&copy; <span id="year"></span> Shubh Jewellers. All rights reserved.</p>
+  </footer>
+
+  <a class="fab" href="https://wa.me/919754512815?text=Hello%20Shubh%20Jewellers%2C%20I%20would%20like%20to%20know%20more." target="_blank" rel="noopener" aria-label="Chat with Shubh Jewellers on WhatsApp">WhatsApp Us</a>
+
+  <dialog id="detail" aria-labelledby="detail-title">
+    <button class="close" aria-label="Close" id="detail-close">&times;</button>
+    <div class="detail-body">
+      <div class="frame detail-img" data-mark="S"><img id="detail-img" alt="" onerror="this.remove()"></div>
+      <div>
+        <h3 id="detail-title"></h3>
+        <p class="tag" id="detail-meta"></p>
+        <p id="detail-desc"></p>
+        <p class="price" id="detail-price"></p>
+        <a class="btn" id="detail-enquire" target="_blank" rel="noopener" href="#">Enquire on WhatsApp</a>
+      </div>
+    </div>
+  </dialog>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js" defer></script>
+  <script src="bg3d.js"></script>
+  <script src="script.js"></script>
+</body>
+</html>
+:root {
+  --bg: #FFF8F6;
+  --bg-2: #FAF0EE;
+  --blush: #F3E1DD;
+  --gold: #D4AF37;
+  --gold-deep: #8F7219;
+  --rose-gold: #B76E79;
+  --rose-deep: #94505B;
+  --ink: #2B2B2B;
+  --ink-soft: #5E5654;
+  --serif: "Cormorant Garamond", Georgia, "Times New Roman", serif;
+  --sans: "Jost", "Helvetica Neue", Arial, sans-serif;
+}
+
+*, *::before, *::after { box-sizing: border-box; }
+html { scroll-behavior: smooth; scroll-padding-top: 5rem; }
+body {
+  margin: 0;
+  font-family: var(--sans);
+  font-weight: 300;
+  font-size: 1.05rem;
+  line-height: 1.7;
+  color: var(--ink);
+  background: linear-gradient(180deg, var(--bg) 0%, var(--bg-2) 100%);
+  background-attachment: fixed;
+  -webkit-font-smoothing: antialiased;
+}
+img { max-width: 100%; display: block; }
+a { color: inherit; }
+h1, h2, h3 { font-family: var(--serif); font-weight: 500; line-height: 1.12; margin: 0 0 .6em; }
+h1 { font-size: clamp(2.6rem, 6vw, 4.6rem); letter-spacing: -.01em; }
+h2 { font-size: clamp(2rem, 4vw, 3rem); }
+h3 { font-size: 1.5rem; }
+p { margin: 0 0 1em; }
+
+:focus-visible { outline: 2px solid var(--rose-deep); outline-offset: 3px; }
+
+#bg3d { position: fixed; inset: 0; width: 100%; height: 100%; z-index: 0; pointer-events: none; }
+main, .site-footer { position: relative; z-index: 1; }
+
+.site-header {
+  position: sticky; top: 0; z-index: 20;
+  display: flex; align-items: center; justify-content: space-between;
+  padding: .9rem clamp(1.2rem, 5vw, 4rem);
+  background: rgba(255, 248, 246, .92);
+  backdrop-filter: blur(10px);
+  border-bottom: 1px solid rgba(212, 175, 55, .35);
+}
+.brand { display: flex; align-items: center; gap: .7rem; text-decoration: none; }
+.brand-logo { height: 62px; width: auto; }
+.brand.has-logo .brand-name {
+  position: absolute; width: 1px; height: 1px; overflow: hidden;
+  clip: rect(0 0 0 0); white-space: nowrap;
+}
+.brand-name { font-family: var(--serif); font-size: 1.7rem; font-weight: 600; letter-spacing: .02em; }
+.site-nav { display: flex; gap: 2.2rem; }
+.site-nav a {
+  text-decoration: none; font-weight: 400; font-size: .98rem;
+  padding: .3rem 0; border-bottom: 1px solid transparent;
+  transition: border-color .25s, color .25s;
+}
+.site-nav a:hover { color: var(--rose-deep); border-color: var(--gold); }
+
+.nav-toggle { display: none; background: none; border: 0; width: 44px; height: 44px; padding: 0; cursor: pointer; position: relative; }
+.nav-toggle span { position: absolute; left: 10px; right: 10px; height: 1.5px; background: var(--ink); transition: transform .3s, top .3s; }
+.nav-toggle span:first-child { top: 17px; }
+.nav-toggle span:last-child { top: 26px; }
+.nav-toggle[aria-expanded="true"] span:first-child { top: 21px; transform: rotate(45deg); }
+.nav-toggle[aria-expanded="true"] span:last-child { top: 21px; transform: rotate(-45deg); }
+
+.frame {
+  position: relative; overflow: hidden;
+  background: radial-gradient(circle at 30% 20%, #fff 0%, var(--blush) 70%);
+}
+.frame::before {
+  content: attr(data-mark);
+  position: absolute; inset: 0; display: grid; place-items: center;
+  font-family: var(--serif); font-size: 5rem; color: rgba(212, 175, 55, .55);
+}
+.frame img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; }
+
+.hero {
+  display: grid; grid-template-columns: 1.05fr .95fr; align-items: center;
+  gap: clamp(2rem, 6vw, 6rem);
+  padding: clamp(3rem, 8vw, 7rem) clamp(1.2rem, 5vw, 4rem);
+  max-width: 1280px; margin: 0 auto;
+}
+.hero-text p { max-width: 34ch; font-size: 1.2rem; color: var(--ink-soft); margin-bottom: 2rem; }
+.hero-visual { display: flex; justify-content: center; }
+.arch {
+  width: min(100%, 420px); aspect-ratio: 5 / 7;
+  border-radius: 999px 999px 8px 8px;
+  box-shadow: 0 0 0 8px var(--bg), 0 0 0 9px var(--gold), 0 30px 60px -25px rgba(148, 80, 91, .45);
+  animation: rise 1.1s cubic-bezier(.2, .7, .2, 1) both;
+}
+@keyframes rise { from { opacity: 0; transform: translateY(24px); } to { opacity: 1; transform: none; } }
+
+.btn {
+  display: inline-block; text-decoration: none; cursor: pointer;
+  font-family: var(--sans); font-weight: 500; font-size: 1rem; letter-spacing: .03em;
+  padding: .95rem 2.2rem; border: 1px solid var(--gold);
+  background: var(--gold); color: var(--ink);
+  transition: background .3s, color .3s, border-color .3s;
+}
+.btn:hover { background: var(--ink); border-color: var(--ink); color: var(--bg); }
+.btn-light { background: transparent; color: var(--bg); border-color: var(--gold); }
+.btn-light:hover { background: var(--gold); border-color: var(--gold); color: var(--ink); }
+
+.about { background: rgba(243, 225, 221, .8); padding: clamp(4rem, 9vw, 7rem) 1.2rem; text-align: center; }
+.about-inner { max-width: 44rem; margin: 0 auto; }
+.about-inner p { font-family: var(--serif); font-size: clamp(1.3rem, 2.4vw, 1.65rem); line-height: 1.55; }
+.rule { display: block; width: 72px; height: 1px; background: var(--gold); margin: 1.4rem auto 1.8rem; position: relative; }
+.rule::after { content: ""; position: absolute; left: 50%; top: 50%; width: 9px; height: 9px; background: var(--gold); transform: translate(-50%, -50%) rotate(45deg); }
+
+.collection, .contact { max-width: 1280px; margin: 0 auto; padding: clamp(4rem, 9vw, 7rem) clamp(1.2rem, 5vw, 4rem); }
+.section-head { text-align: center; margin-bottom: 3rem; }
+.section-head p { color: var(--ink-soft); }
+
+.grid { columns: 260px; column-gap: 1.8rem; }
+.card { display: flex; flex-direction: column; break-inside: avoid; margin-bottom: 2.6rem; }
+.card .frame { aspect-ratio: 4 / 5; border-radius: 4px; border: 1px solid rgba(212, 175, 55, .45); }
+.card .frame img { transition: transform .6s ease; }
+.card:hover .frame img { transform: scale(1.04); }
+.card-body { padding: 1.1rem .2rem 0; display: flex; flex-direction: column; gap: .25rem; flex: 1; }
+.card h3 { font-size: 1.45rem; margin: 0; }
+.tag { font-size: .9rem; color: var(--rose-deep); margin: 0; }
+.price { font-family: var(--serif); font-size: 1.2rem; color: var(--gold-deep); margin: 0; }
+.link {
+  align-self: flex-start; margin-top: .6rem; background: none; border: 0; padding: .2rem 0;
+  font: inherit; font-weight: 400; color: var(--ink); cursor: pointer; text-decoration: none;
+  border-bottom: 1px solid var(--gold);
+}
+.link:hover { color: var(--rose-deep); }
+
+.banner { display: grid; grid-template-columns: 1fr 1fr; background: var(--ink); color: var(--bg); }
+.banner-img { aspect-ratio: 1414 / 1037; min-height: 260px; background: radial-gradient(circle at 30% 20%, #4a4343 0%, #2B2B2B 80%); }
+.banner-text { padding: clamp(2.5rem, 7vw, 5.5rem); align-self: center; }
+.banner-text p { color: #E9DAD6; max-width: 36ch; margin-bottom: 1.8rem; }
+
+.info-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 1.8rem; max-width: 1000px; margin: 0 auto; }
+.info-card { text-align: center; padding: 2.4rem 1.5rem; border: 1px solid rgba(212, 175, 55, .55); background: rgba(255, 255, 255, .45); }
+.info-card h3 { color: var(--rose-deep); font-size: 1.35rem; }
+.big { font-family: var(--serif); font-size: 1.9rem; margin-bottom: .2em; }
+.big a { text-decoration: none; }
+.status { font-weight: 500; margin: .4rem 0 0; }
+.status.open { color: #3F6B4A; }
+.status.closed { color: var(--rose-deep); }
+
+.site-footer { text-align: center; padding: 3rem 1.2rem; border-top: 1px solid rgba(212, 175, 55, .35); }
+.site-footer .brand-name { display: block; margin-bottom: .3rem; }
+.copy { font-size: .85rem; color: var(--ink-soft); margin: 1rem 0 0; }
+
+dialog { border: 1px solid var(--gold); background: var(--bg); color: var(--ink); padding: 0; width: min(92vw, 820px); max-height: 90vh; overflow: auto; }
+dialog::backdrop { background: rgba(43, 43, 43, .55); }
+.detail-body { display: grid; grid-template-columns: 1fr 1fr; gap: 2rem; padding: 2rem; align-items: center; }
+.detail-img { aspect-ratio: 4 / 5; width: 100%; }
+.close { position: absolute; top: .5rem; right: .8rem; background: none; border: 0; font-size: 2rem; line-height: 1; cursor: pointer; color: var(--ink); z-index: 2; }
+
+.trust { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1rem; max-width: 1100px; margin: 0 auto; padding: 1.6rem clamp(1.2rem, 5vw, 4rem); border-top: 1px solid rgba(212, 175, 55, .45); border-bottom: 1px solid rgba(212, 175, 55, .45); text-align: center; }
+.trust strong { display: block; font-family: var(--serif); font-size: 1.3rem; font-weight: 600; }
+.trust span { font-size: .9rem; color: var(--ink-soft); }
+
+.fab { position: fixed; right: max(1rem, env(safe-area-inset-right, 0px)); bottom: max(1rem, env(safe-area-inset-bottom, 0px)); z-index: 25; text-decoration: none; font-weight: 500; padding: .85rem 1.4rem; background: var(--ink); color: var(--bg); border: 1px solid var(--gold); border-radius: 999px; box-shadow: 0 10px 30px -10px rgba(43, 43, 43, .6); transition: background .3s, color .3s; }
+.fab:hover { background: var(--gold); color: var(--ink); }
+
+.card { opacity: 0; transform: translateY(22px); transition: opacity .7s ease, transform .7s ease; }
+.card.in { opacity: 1; transform: none; }
+.card .frame { transition: transform .25s ease, box-shadow .25s ease; will-change: transform; }
+.card .frame.tilting { box-shadow: 0 25px 40px -20px rgba(148, 80, 91, .5); }
+
+@media (max-width: 860px) {
+  .hero { grid-template-columns: 1fr; text-align: center; }
+  .hero-text p { margin-inline: auto; }
+  .hero-visual { order: -1; }
+  .arch { width: min(78%, 340px); }
+  .banner { grid-template-columns: 1fr; }
+  .banner-img { min-height: 260px; }
+  .detail-body { grid-template-columns: 1fr; }
+  .trust { grid-template-columns: 1fr; }
+
+  .nav-toggle { display: block; }
+  .site-nav {
+    position: absolute; top: 100%; left: 0; right: 0;
+    flex-direction: column; gap: 0; background: var(--bg);
+    border-bottom: 1px solid rgba(212, 175, 55, .35);
+    max-height: 0; overflow: hidden; transition: max-height .35s ease;
+  }
+  .site-nav.open { max-height: 320px; }
+  .site-nav a { padding: 1rem 1.5rem; border-bottom: 1px solid var(--bg-2); }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+  *, *::before, *::after { animation: none !important; transition: none !important; }
+}
+"use strict";
+
+const WHATSAPP = "919754512815";
+
+const PRODUCTS = [
+  { name: "Rudraksha Silver Mala", meta: "92.5 Silver and Rudraksha", price: "Price on request", image: "product-1.jpg", ratio: "964 / 1250",
+    desc: "A classic rudraksha mala, with each bead set in a silver cap and linked on a fine silver chain." },
+  { name: "Wave Blue Bracelet", meta: "92.5 Silver with Blue Stones", price: "Price on request", image: "product-2.jpg", ratio: "1000 / 719",
+    desc: "A sculpted wave-line bracelet set with rows of blue baguette stones and a fine sparkling edge." },
+  { name: "Silver Tulsi Plant Set", meta: "Silver with Enamel", price: "Price on request", image: "product-3.jpg", ratio: "1000 / 702",
+    desc: "Three miniature tulsi plants with green enamel leaves, rising from engraved silver planters." },
+  { name: "Silver Horse Pair", meta: "Silver", price: "Price on request", image: "product-4.jpg", ratio: "720 / 516",
+    desc: "A graceful pair of decorated horses on rope-edged bases, made for gifting and display." },
+  { name: "Engraved Silver Kada", meta: "92.5 Silver", price: "Price on request", image: "product-5.jpg", ratio: "1000 / 733",
+    desc: "A pair of open kadas with hand-engraved floral patterns and a traditional oxidised finish." },
+  { name: "Silver Bead Chain", meta: "92.5 Silver", price: "Price on request", image: "product-6.jpg", ratio: "720 / 511",
+    desc: "A smooth, polished bead chain with a simple, modern look for everyday wear." },
+  { name: "Lakshmi Ganesh Saraswati", meta: "Silver Idol Set", price: "Price on request", image: "product-7.jpg", ratio: "720 / 504",
+    desc: "A silver idol set of Lakshmi, Ganesh and Saraswati under an ornate arch with pink stone accents." },
+  { name: "Royal Blue Bracelet", meta: "92.5 Silver with Blue Stones", price: "Price on request", image: "product-8.jpg", ratio: "720 / 508",
+    desc: "A slim bracelet with rows of deep blue stones and a diamond-like border, shown here on the wrist." },
+  { name: "Shiv Parivar Idol", meta: "Idol Set with Pink Stones", price: "Price on request", image: "product-9.jpg", ratio: "1000 / 697",
+    desc: "A detailed Shiv Parivar idol with Shiva, Parvati, Ganesh and Kartikeya, finished with pink stone garlands and halo." },
+  { name: "Pink Halo Cocktail Ring", meta: "Ring with Pink Stones", price: "Price on request", image: "product-10.jpg", ratio: "1000 / 502",
+    desc: "A statement ring with a large centre stone, framed by layers of pink baguette and round stones on a split band." }
+];
+
+const grid = document.getElementById("product-grid");
+const dialog = document.getElementById("detail");
+
+function el(tag, className, text) {
+  const node = document.createElement(tag);
+  if (className) node.className = className;
+  if (text !== undefined) node.textContent = text;
+  return node;
+}
+
+function setImage(frame, src, alt) {
+  const img = document.createElement("img");
+  img.src = src;
+  img.alt = alt;
+  img.loading = "lazy";
+  img.addEventListener("error", () => img.remove());
+  frame.appendChild(img);
+}
+
+PRODUCTS.forEach((p) => {
+  const card = el("article", "card");
+  const frame = el("div", "frame");
+  frame.dataset.mark = "S";
+  frame.style.aspectRatio = p.ratio;
+  setImage(frame, p.image, p.name);
+
+  const body = el("div", "card-body");
+  body.append(el("h3", "", p.name), el("p", "tag", p.meta), el("p", "price", p.price));
+
+  const btn = el("button", "link", "View Details");
+  btn.type = "button";
+  btn.addEventListener("click", () => openDetail(p));
+  body.appendChild(btn);
+
+  card.append(frame, body);
+  grid.appendChild(card);
+});
+
+function openDetail(p) {
+  document.getElementById("detail-title").textContent = p.name;
+  document.getElementById("detail-meta").textContent = p.meta;
+  document.getElementById("detail-desc").textContent = p.desc;
+  document.getElementById("detail-price").textContent = p.price;
+
+  const holder = document.querySelector(".detail-img");
+  holder.querySelector("img")?.remove();
+  holder.style.aspectRatio = p.ratio;
+  setImage(holder, p.image, p.name);
+
+  const msg = encodeURIComponent(`Hello Shubh Jewellers, I would like to enquire about: ${p.name}`);
+  document.getElementById("detail-enquire").href = `https://wa.me/${WHATSAPP}?text=${msg}`;
+
+  dialog.showModal();
+}
+
+document.getElementById("detail-close").addEventListener("click", () => dialog.close());
+dialog.addEventListener("click", (e) => { if (e.target === dialog) dialog.close(); });
+
+const toggle = document.querySelector(".nav-toggle");
+const nav = document.getElementById("site-nav");
+
+function setNav(open) {
+  nav.classList.toggle("open", open);
+  toggle.setAttribute("aria-expanded", String(open));
+  toggle.setAttribute("aria-label", open ? "Close menu" : "Open menu");
+}
+toggle.addEventListener("click", () => setNav(!nav.classList.contains("open")));
+nav.querySelectorAll("a").forEach((a) => a.addEventListener("click", () => setNav(false)));
+
+function updateStatus() {
+  const parts = new Intl.DateTimeFormat("en-GB", {
+    timeZone: "Asia/Kolkata", hour: "2-digit", minute: "2-digit", hour12: false
+  }).formatToParts(new Date());
+  const h = Number(parts.find((x) => x.type === "hour").value) % 24;
+  const m = Number(parts.find((x) => x.type === "minute").value);
+  const minutes = h * 60 + m;
+  const open = minutes >= 12 * 60 && minutes < 20 * 60 + 30;
+
+  const status = document.getElementById("open-status");
+  status.textContent = open ? "We are open now" : "We are closed right now. We open at 12:00 PM.";
+  status.className = "status " + (open ? "open" : "closed");
+}
+updateStatus();
+setInterval(updateStatus, 60000);
+
+document.getElementById("year").textContent = new Date().getFullYear();
+
+(function () {
+  var cards = document.querySelectorAll(".card");
+  if ("IntersectionObserver" in window) {
+    var io = new IntersectionObserver(function (entries) {
+      entries.forEach(function (en) { if (en.isIntersecting) { en.target.classList.add("in"); io.unobserve(en.target); } });
+    }, { threshold: 0.12 });
+    cards.forEach(function (c) { io.observe(c); });
+  } else { cards.forEach(function (c) { c.classList.add("in"); }); }
+
+  if (window.matchMedia && window.matchMedia("(hover: hover)").matches) {
+    cards.forEach(function (card) {
+      var f = card.querySelector(".frame");
+      card.addEventListener("pointermove", function (e) {
+        var r = f.getBoundingClientRect();
+        var x = (e.clientX - r.left) / r.width - 0.5, y = (e.clientY - r.top) / r.height - 0.5;
+        f.style.transform = "perspective(800px) rotateY(" + (x * 10) + "deg) rotateX(" + (-y * 10) + "deg) scale(1.02)";
+        f.classList.add("tilting");
+      });
+      card.addEventListener("pointerleave", function () { f.style.transform = ""; f.classList.remove("tilting"); });
+    });
+  }
+})();
+window.addEventListener("load", function () {
+  "use strict";
+  if (typeof THREE === "undefined") return;
+  var canvas = document.getElementById("bg3d");
+  if (!canvas) return;
+  var renderer;
+  try { renderer = new THREE.WebGLRenderer({ canvas: canvas, antialias: true, alpha: true, powerPreference: "low-power" }); }
+  catch (e) { canvas.remove(); return; }
+
+  var reduced = window.matchMedia && window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+  renderer.setPixelRatio(Math.min(window.devicePixelRatio || 1, 1.5));
+  renderer.setClearColor(0x000000, 0);
+  renderer.outputEncoding = THREE.sRGBEncoding;
+  renderer.toneMapping = THREE.ACESFilmicToneMapping;
+  renderer.toneMappingExposure = 1.15;
+
+  var scene = new THREE.Scene();
+  var camera = new THREE.PerspectiveCamera(50, 1, 0.1, 100);
+  camera.position.z = 14;
+
+  var envScene = new THREE.Scene();
+  envScene.background = new THREE.Color(0x2b2222);
+  function panel(color, k, x, y, z, w, h) {
+    var m = new THREE.Mesh(new THREE.PlaneGeometry(w, h),
+      new THREE.MeshBasicMaterial({ color: new THREE.Color(color).multiplyScalar(k), side: THREE.DoubleSide }));
+    m.position.set(x, y, z); m.lookAt(0, 0, 0); envScene.add(m);
+  }
+  panel(0xffffff, 5, 0, 10, 0, 14, 14);
+  panel(0xffd98a, 4, 9, 2, 6, 8, 10);
+  panel(0xffb4bc, 3, -9, 1, 5, 8, 10);
+  panel(0xffffff, 4, 0, -3, 10, 14, 2);
+  var pmrem = new THREE.PMREMGenerator(renderer);
+  scene.environment = pmrem.fromScene(envScene, 0.04).texture;
+  pmrem.dispose();
+
+  scene.add(camera);
+  var silkU = { uTime: { value: 0 }, uScroll: { value: 0 }, uLight: { value: 0 } };
+  var silk = new THREE.Mesh(new THREE.PlaneGeometry(40, 26, 110, 70), new THREE.ShaderMaterial({
+    uniforms: silkU, transparent: true, depthWrite: false, depthTest: false,
+    vertexShader: [
+      "uniform float uTime; uniform float uScroll; varying vec3 vN; varying vec3 vP; varying float vH;",
+      "void main(){ vec3 p=position; float t=uTime*0.12;",
+      "float a=p.x*0.35+p.y*0.22+t+uScroll*1.4; float b=p.x*0.18-p.y*0.41-t*1.3-uScroll*0.8; float c=p.x*0.7+p.y*0.5+t*0.8;",
+      "float h=0.9*sin(a)+0.55*sin(b)+0.3*sin(c);",
+      "float dx=0.9*0.35*cos(a)+0.55*0.18*cos(b)+0.3*0.7*cos(c); float dy=0.9*0.22*cos(a)-0.55*0.41*cos(b)+0.3*0.5*cos(c);",
+      "p.z+=h; vH=h; vN=normalMatrix*normalize(vec3(-dx,-dy,1.0));",
+      "vec4 mv=modelViewMatrix*vec4(p,1.0); vP=mv.xyz; gl_Position=projectionMatrix*mv; }"].join("\n"),
+    fragmentShader: [
+      "uniform float uLight; varying vec3 vN; varying vec3 vP; varying float vH;",
+      "void main(){ vec3 N=normalize(vN); vec3 V=normalize(-vP); vec3 L=normalize(vec3(uLight*5.0,4.0,7.0));",
+      "float diff=max(dot(N,L),0.0); float spec=pow(max(dot(N,normalize(L+V)),0.0),70.0);",
+      "float fres=pow(1.0-max(dot(N,V),0.0),2.0);",
+      "vec3 deep=vec3(0.70,0.50,0.27); vec3 lite=vec3(0.95,0.80,0.55); vec3 rose=vec3(0.86,0.58,0.58);",
+      "vec3 base=mix(deep,lite,smoothstep(-1.2,1.4,vH)); base=mix(base,rose,smoothstep(0.2,1.0,sin(vP.x*0.18+vH*0.6))*0.35);",
+      "vec3 col=base*(0.6+0.55*diff)+vec3(1.0,0.93,0.76)*spec*0.95+rose*fres*0.2;",
+      "gl_FragColor=vec4(col,0.3+spec*0.4+fres*0.12); }"].join("\n")
+  }));
+  silk.position.z = -16; silk.renderOrder = -1; silk.frustumCulled = false;
+  camera.add(silk);
+  function fitSilk() {
+    var cover = 14.9, s = Math.max(camera.aspect * cover / 40, cover / 26) * 1.2;
+    silk.scale.set(s, s, 1);
+  }
+
+  var key = new THREE.DirectionalLight(0xffe9b0, 0.8); key.position.set(4, 6, 8); scene.add(key);
+
+  function metal(c, r) { return new THREE.MeshStandardMaterial({ color: c, metalness: 1, roughness: r, transparent: true, opacity: 0.82 }); }
+  var gold = metal(0xd4af37, 0.2), roseGold = metal(0xc98a8f, 0.22);
+  var diamondMat = new THREE.MeshStandardMaterial({ color: 0xf4f8ff, metalness: 0.85, roughness: 0.04, flatShading: true, transparent: true, opacity: 0.85 });
+  var pearlMat = new THREE.MeshStandardMaterial({ color: 0xfff4ec, metalness: 0.15, roughness: 0.28, transparent: true, opacity: 0.9 });
+
+  var diamondGeo = new THREE.LatheGeometry([
+    new THREE.Vector2(0, -0.95), new THREE.Vector2(0.9, 0.05), new THREE.Vector2(0.95, 0.12),
+    new THREE.Vector2(0.5, 0.38), new THREE.Vector2(0, 0.38)], 8);
+  var torusGeo = new THREE.TorusGeometry(1, 0.15, 20, 56);
+  var pearlGeo = new THREE.SphereGeometry(0.5, 24, 24);
+
+  function makeRing(mat) {
+    var g = new THREE.Group();
+    g.add(new THREE.Mesh(torusGeo, mat));
+    var s = new THREE.Mesh(diamondGeo, diamondMat);
+    s.scale.set(0.32, 0.32, 0.32); s.position.y = 1.32; g.add(s);
+    return g;
+  }
+  function makeGem(type, i) {
+    if (type === 0) return makeRing(i % 2 ? roseGold : gold);
+    if (type === 1) return new THREE.Mesh(diamondGeo, diamondMat);
+    return new THREE.Mesh(pearlGeo, pearlMat);
+  }
+
+  var seed = 11;
+  function rnd() { seed = (seed * 16807) % 2147483647; return (seed - 1) / 2147483646; }
+  var Y_RANGE = 70, N = 14, gems = [], i;
+  for (i = 0; i < N; i++) {
+    var type = [0, 1, 2, 1, 0, 2][i % 6], big = i === 0;
+    var obj = makeGem(type, i), s = big ? 2.1 : 0.9 + rnd() * 0.9;
+    obj.scale.set(s, s, s);
+    obj.rotation.y = rnd() * 6;
+    scene.add(obj);
+    gems.push({ o: obj, type: type, nx: big ? -0.85 : (i % 2 ? 1 : -1) * (0.45 + rnd() * 0.5),
+      y: big ? -1 : 4 - (i / (N - 1)) * (Y_RANGE + 8) + (rnd() - 0.5) * 3,
+      z: big ? -2 : -6 + rnd() * 9, ry: (rnd() - 0.5) * 0.5, rx: (rnd() - 0.5) * 0.5,
+      fs: 0.3 + rnd() * 0.5, fp: rnd() * 6 });
+  }
+
+  var tc = document.createElement("canvas"); tc.width = tc.height = 32;
+  var cx = tc.getContext("2d"), gr = cx.createRadialGradient(16, 16, 0, 16, 16, 16);
+  gr.addColorStop(0, "rgba(255,255,255,1)"); gr.addColorStop(0.4, "rgba(255,226,140,.8)"); gr.addColorStop(1, "rgba(255,226,140,0)");
+  cx.fillStyle = gr; cx.fillRect(0, 0, 32, 32);
+  var COUNT = 90, pos = new Float32Array(COUNT * 3);
+  for (i = 0; i < COUNT; i++) { pos[i * 3] = (rnd() - 0.5) * 30; pos[i * 3 + 1] = 5 - rnd() * (Y_RANGE + 10); pos[i * 3 + 2] = -8 + rnd() * 12; }
+  var pg = new THREE.BufferGeometry(); pg.setAttribute("position", new THREE.BufferAttribute(pos, 3));
+  var pm = new THREE.PointsMaterial({ size: 0.32, map: new THREE.CanvasTexture(tc), color: 0xd4af37, transparent: true, opacity: 0.8, depthWrite: false });
+  scene.add(new THREE.Points(pg, pm));
+
+  var W = 0, H = 0, progress = 0, px = 0, last = 0, raf = 0;
+  function layout() {
+    fitSilk();
+    var t = Math.tan((camera.fov * Math.PI) / 360);
+    gems.forEach(function (g) { g.o.position.set(g.nx * t * (camera.position.z - g.z) * camera.aspect, g.y, g.z); });
+  }
+  function resize(force) {
+    var w = window.innerWidth, h = window.innerHeight;
+    if (!force && w === W && Math.abs(h - H) < 200) return;
+    W = w; H = h; renderer.setSize(w, h, false);
+    camera.aspect = w / h; camera.updateProjectionMatrix(); layout(); render();
+  }
+  function onScroll() {
+    var max = Math.max(1, document.documentElement.scrollHeight - window.innerHeight);
+    progress = Math.min(1, Math.max(0, window.scrollY / max));
+    if (reduced) requestAnimationFrame(render);
+  }
+  function render() {
+    camera.position.y += (-progress * Y_RANGE - camera.position.y) * (reduced ? 1 : 0.08);
+    camera.position.x += (px * 1.2 - camera.position.x) * (reduced ? 0 : 0.05);
+    camera.lookAt(0, camera.position.y, 0);
+    key.position.y = camera.position.y + 6;
+    silkU.uTime.value = performance.now() / 1000; silkU.uScroll.value = progress * 6; silkU.uLight.value = px;
+    renderer.render(scene, camera);
+  }
+  function loop(now) {
+    raf = requestAnimationFrame(loop);
+    var dt = Math.min(0.05, (now - last) / 1000); last = now;
+    gems.forEach(function (g) {
+      g.o.rotation.y += g.ry * dt;
+      if (g.type === 0) g.o.rotation.x = 0.55 + Math.sin(now / 1000 * 0.4 + g.fp) * 0.2; else g.o.rotation.x += g.rx * dt;
+      g.o.position.y = g.y + Math.sin(now / 1000 * g.fs + g.fp) * 0.35;
+    });
+    pm.opacity = 0.7 + Math.sin(now / 900) * 0.15;
+    render();
+  }
+  window.addEventListener("scroll", onScroll, { passive: true });
+  window.addEventListener("pointermove", function (e) { px = (e.clientX / window.innerWidth - 0.5) * 2; }, { passive: true });
+  window.addEventListener("resize", function () { resize(false); });
+  document.addEventListener("visibilitychange", function () {
+    if (reduced) return;
+    if (document.hidden) cancelAnimationFrame(raf); else { last = performance.now(); raf = requestAnimationFrame(loop); }
+  });
+  resize(true); onScroll();
+  if (!reduced) raf = requestAnimationFrame(loop);
+});
